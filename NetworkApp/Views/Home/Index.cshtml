@@ -1,0 +1,32 @@
+﻿@using Microsoft.AspNetCore.Identity;
+@using NetworkApp.Models.Users;
+@inject SignInManager<User> SignInManager
+@inject UserManager<User> UserManager;
+
+@model NetworkApp.ViewModels.Account.MainViewModel;
+
+@{
+    ViewData["Title"] = "Home Page";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@if (SignInManager.IsSignedIn(User))
+{
+    ViewData["Title"] = "Моя страница";
+}
+else
+{
+    <div class="row">
+        <div class="side">
+            <div class="center">
+                Регистрируйтесь, делитесь мыслями, находите друзей!
+                <img class="main-img" src="../Static/500.png" />
+            </div>
+
+        </div>
+
+        <div class="main">
+            <partial name="Login" model="@Model.LoginView" />
+            <partial name="Register" model="@Model.RegisterView" />
+        </div>
+    </div>
+}

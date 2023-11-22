@@ -1,0 +1,69 @@
+﻿
+@model NetworkApp.ViewModels.Account.ChatViewModel;
+
+<div class="block-reg background-white">
+    <div>
+        <form method="get" asp-controller="AccountManager" asp-action="MyPage">
+            <input class="enter_submit" type="submit" value="Назад" />
+        </form>
+    </div>
+    <div style="display:none">
+        <p id="ModelYouId">@Model.You.Id</p>
+        <p id="ModelToWhomId">@Model.ToWhom.Id</p>
+    </div>
+    <h4 class="center">Чат <b id="ModelYouFirstName">@Model.You.FirstName</b> и  @Model.ToWhom.FirstName</h4>
+
+    <div id="allMessages" class="lined-block">
+        <label class="gray-text">Сообщения</label>
+        @if (Model.History.Count != 0)
+        {
+
+            @foreach (var message in @Model.History)
+            {
+                <div>
+                    <label> @message.Sender.FirstName:</label>
+                    @message.Text
+                </div>
+            }
+        }
+        else
+        {
+            <div>
+                <label> У вас пока нет сообщений с  @Model.ToWhom.GetFullName().</label>
+            </div>
+        }
+        <div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-6">
+                <ul id="messagesList"></ul>
+            </div>
+        </div>
+
+    </div>
+    
+
+
+    <div class="lined-block">
+        <label class="gray-text">Новое сообщение</label>
+
+        <form id="mForm" class="frm" method="post" asp-controller="AccountManager" asp-action="NewMessage" asp-route-id="@Model.ToWhom.Id">
+            <div asp-validation-summary="ModelOnly"></div>
+            <div>
+                <div class="mrgn">
+                    <input id="msgText" asp-for="NewMessage.Text" class="form-control emojify" type="text" />
+                </div>
+                <div class="center">
+                    <input id="sendButton1" class="btn_submit" type="submit" value="Отправить сообщение / Обновить список сообщений" />
+
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script src="~/js/signalr/dist/browser/signalr.js"></script>
+<script src="~/js/chat.js"></script>
+

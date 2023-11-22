@@ -1,0 +1,24 @@
+﻿@model NetworkApp.ViewModels.Account.ChatViewModel;
+<meta http-equiv="refresh" content="5">
+
+    <div id="allMessages" class="lined-block">
+        <label class="gray-text">Сообщения</label>
+        @if (Model.History.Count != 0)
+         {
+            @foreach (var message in @Model.History)
+            {
+                <div>
+                    <label> @message.Sender.FirstName:</label>
+                    @message.Text
+                </div>
+                }
+         }
+         else
+         {
+             <div>
+                 <label> У вас пока нет сообщений с  @Model.ToWhom.GetFullName().</label>
+             </div>
+         }
+    </div>
+
+

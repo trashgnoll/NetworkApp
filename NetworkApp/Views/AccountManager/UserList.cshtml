@@ -1,0 +1,34 @@
+﻿
+
+@model NetworkApp.ViewModels.Account.SearchViewModel;
+
+
+<div class="block-reg background-white">
+
+    @if (Model.UserList.Count != 0)
+     {
+
+        @foreach (var user in @Model.UserList)
+         {
+            <div>
+                    <img class="usrImg" src=@user.Image width="100">
+                    <label class="usrName">@user.GetFullName() <br /> @user.Status.Substring(0,Math.Min(user.Status.Length,50)) <br />@user.About.Substring(0, Math.Min(user.About.Length, 100)) </label>
+                    @if (!@user.IsFriendWithCurrent)
+                    {
+                <form class="addFriendForm" asp-controller="AccountManager" asp-action="AddFriend" asp-route-id="@user.Id" method="post">
+                    <button type="submit" class="btn btn-sm btn-primary">
+                        Добавить в друзья
+                    </button>
+                </form>}
+            </div>
+         }
+     }
+    else
+    {
+        <div>
+            <label> Поиск не дал результатов.</label>
+        </div>
+    }
+
+
+</div>

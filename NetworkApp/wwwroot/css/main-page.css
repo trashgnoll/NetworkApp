@@ -1,0 +1,147 @@
+﻿.main {
+    -ms-flex: 40%; /* IE10 */
+    flex: 40%;
+    padding: 20px;
+}
+
+
+.side {
+    -ms-flex: 60%; /* IE10 */
+    flex: 60%;
+    padding: 20px;
+}
+
+.row {
+    display: -ms-flexbox; /* IE10 */
+    display: flex;
+    -ms-flex-wrap: wrap; /* IE10 */
+    flex-wrap: wrap;
+}
+
+.footer {
+    padding: 20px;
+    text-align: center;
+    background-color: #252525;
+}
+
+.topnav {
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+    background-color: #252525;
+}
+
+.topnav input[type=text] {
+    background-color: #111;
+    color: #b3c5d6;
+}
+
+.btn_submit {
+    background-color: #04734a;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+.frm_text {
+    width: 100%;
+}
+
+.frm {
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.mrgn 
+{
+    margin: 5px;
+}
+
+.block-reg {
+    margin: 20px;
+    padding: 30px;
+    align-content: center;
+    border-radius: 4px;
+    box-shadow: 0 1px 0 0 0, 0 0 0 1px #edeef0;
+}
+
+.background-main {
+    background-color: #020202;
+}
+
+.background-white {
+    background-color: #252525;
+}
+
+.text-color-gray {
+    color: slategray;
+}
+
+.center {
+    text-align: center;
+    align-content: center;
+    margin: 5px;
+}
+
+.enter_submit {
+    background-color: #3f648e;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px;
+    margin: 8px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+.main-img 
+{
+    align-content:center;
+    width: 100%;
+    max-width: 500px;
+    margin-top:30px;
+    margin-left: 8px;
+}
+
+.text-size_12 {
+    font-size: 15px;
+}
+
+.field-validation-error {
+    color: #b94a48;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+input.input-validation-error {
+    border: 1px solid #b94a48;
+}
+
+input[type="checkbox"].input-validation-error {
+    border: 0 none;
+}
+
+.validation-summary-errors {
+    color: #b94a48;
+}
+
+.validation-summary-valid {
+    display: none;
+}
+
+.date_control 
+{
+    width: 25%;
+    display: inline;
+    min-width: max-content;
+}
+
+.date_box{
+    width: 100%;
+}
